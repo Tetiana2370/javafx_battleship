@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane alignment="center" hgap="10" prefHeight="651.0" prefWidth="700.0" stylesheets="@styles.css" vgap="10" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <FlowPane prefHeight="611.0" prefWidth="650.0">
+         <children>
+            <HBox prefHeight="611.0" prefWidth="750.0" spacing="50.0">
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="500.0" prefWidth="320.0">
+                     <children>
+                        <Canvas fx:id="_currentPlayerField" height="300.0" onDragDetected="#setX" onMouseReleased="#moveShip" styleClass="playground" width="300.0" />
+
+                        <GridPane fx:id="_availableShips" alignment="TOP_CENTER" hgap="10.0" VBox.vgrow="NEVER">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="30.0" prefWidth="130.0" />
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="30.0" prefWidth="30.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <VBox.margin>
+                              <Insets top="50.0" />
+                           </VBox.margin>
+                           <children>
+                              <Button fx:id="_ship_x4" mnemonicParsing="false" onMouseReleased="#locateShip" prefHeight="30.0" prefWidth="120.0" styleClass="shipButton">
+                                 <GridPane.margin>
+                                    <Insets left="20.0" />
+                                 </GridPane.margin></Button>
+                              <Button fx:id="_ship_x3" mnemonicParsing="false" onMouseReleased="#locateShip" prefWidth="90.0" styleClass="shipButton" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="20.0" />
+                                 </GridPane.margin></Button>
+                              <Button fx:id="_ship_x2" mnemonicParsing="false" onMouseReleased="#locateShip" prefWidth="60.0" styleClass="shipButton" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets left="20.0" />
+                                 </GridPane.margin></Button>
+                              <Button fx:id="_ship_x1" mnemonicParsing="false" onMouseReleased="#locateShip" prefWidth="30.0" styleClass="shipButton" GridPane.rowIndex="3">
+                                 <GridPane.margin>
+                                    <Insets left="20.0" />
+                                 </GridPane.margin></Button>
+                              <Label fx:id="_label_x4" styleClass="shipLable" text="1" GridPane.columnIndex="1" />
+                              <Label fx:id="_label_x3" styleClass="shipLable" text="2" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label fx:id="_label_x2" styleClass="shipLable" text="3" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label fx:id="_label_x1" styleClass="shipLable" text="4" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                           </children>
+                        </GridPane>
+                     </children></VBox>
+                   <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="500.0" prefWidth="320.0">
+                     <children>
+                        <Canvas fx:id="_opponentField" height="300.0" onMouseReleased="#killBlock" styleClass="playground" width="300.0" />
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Button alignment="CENTER" mnemonicParsing="false" onMouseReleased="#startGame" styleClass="controlButton" text="PLAY" />
+                               <Label fx:id="_message_label" styleClass="message_label" text="msg here" />
+                             
+                           </children>
+                           <padding>
+                              <Insets top="30.0" />
+                           </padding></VBox>
+                     </children> </VBox>
+               </children>
+            </HBox>
+         </children>
+         <GridPane.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </GridPane.margin></FlowPane>
+   </children>
+</GridPane>
